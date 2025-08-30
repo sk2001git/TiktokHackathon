@@ -63,6 +63,7 @@ A quick MVP for the "From Guesswork to Governance" hackathon prompt. This projec
 5. Upload/Choose a `Project Document` which you need to check the compliance of
 6. Pick the requirements you want to check if the uploaded `Project Document` fufils 
 7. Click `Run Verification` and see the results
+8. Click on any verified criterion to see the reasoning behind the result
 
 ## How It Works
 
