@@ -43,8 +43,39 @@ A quick MVP for the "From Guesswork to Governance" hackathon prompt. This projec
 
 ### Model pipeline
 
-To implement 
-We use Dify to streamline 
+To allow the LLM to parse the information, we implemented a Retrieval Augmented Generation framework with 2 inputs.
+We used Dify to streamline the deployment process.
+
+**Inputs**
+1. Legal Document
+2. Project Document
+
+**Model Workflow**
+1. Ingestion of Legal Document 
+
+    The legal document is fed into the LLM, which chunks the document into the respectives laws that projects have to abide by, according to the prompt given to the LLM.
+    It also extracts fields like: 
+    - Summary
+    - Actionable Verbs, eg. Store
+    - Target of action, eg. Personal data
+    - Conditions that the law holds, eg. During data processing activities
+    - Keywords, eg. "data minimisation", "storage limitation"
+    - Exceptions, eg. Public interest archiving
+    These chunks are then returned to the Backend, which stores it in a database, along with other peripheral metadata, like the name and region of the legal document.
+
+2. Ingestion of Project Doucment
+
+    The project document is then uploaded and sent for indexing.
+
+3. Verfication of Project Document
+
+    For each criteria selected by the user, the Dify workflow concatenates the prompt, the document, the criteria and other relevant data (eg. the name and region of the legal document), and queries the LLM.
+    The LLM then generates a templated JSON response with: 
+    1. Compliance status
+    2. Confidence score
+    3. Reasoning
+    4. Supporting Evidence from the Project Document that the LLM referenced
+    5. Whether to flag for human review
 
 
 ### Backend
