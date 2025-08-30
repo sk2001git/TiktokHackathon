@@ -18,9 +18,34 @@ A quick MVP for the "From Guesswork to Governance" hackathon prompt. This projec
 
 ### Running the Application
 
-1.  **Clone the repository.**
+1.  **Clone the repository and checkout the active_changes branch**
 2.  **Navigate to the project directory.**
-3.  **Launch the services using Docker Compose:**
+3.  **Create the .env**
+
+    The .env template is as follows:
+    
+    ```
+    # Your Dify API base URL (e.g., https://api.dify.ai/v1)
+    DIFY_BASE_URL=
+    # MongoDB Configuration
+    MONGO_URI=
+
+    DIFY_EXTRACT_API_KEY=
+    DIFY_VERIFY_API_KEY=
+    DIFY_KB_API_KEY=
+    DIFY_DATASET_ID=
+    DIFY_DATASET_API_KEY=
+
+    VITE_API_BASE=
+
+    MONGO_INITDB_ROOT_USERNAME=
+    MONGO_INITDB_ROOT_PASSWORD=
+    MONGO_URI=
+    ```
+
+    For the Organising Committe, please email us for the Environment File to run the application.
+
+4.  **Launch the services using Docker Compose:**
 
     ```bash
     docker-compose up --build
