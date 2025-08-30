@@ -1,0 +1,8 @@
+fastapi
+uvicorn[standard]
+pydantic>=2.6
+pydantic-settings
+pymongo>=4.6
+httpx
+python-dotenv
+python-multipart  
